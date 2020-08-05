@@ -34,9 +34,15 @@ public class Player : MonoBehaviour
     {
         // rb.velocity = new Vector2(speed,rb.velocity.y);
 
+        Destroy(GetComponent<PolygonCollider2D>());
+        gameObject.AddComponent<PolygonCollider2D>();
+
         float dirY = Input.GetAxis("Vertical");
+        float dirJump = Input.GetAxis("Horizontal");
 
         isGround = Physics2D.OverlapCircle(groundCheckPoint.position , groundCheckRadius , groundLayer);
+        
+                // if(dirJump > 0f && isGround)
         if(Input.GetButtonDown("Jump") && isGround)
         {
             rb.velocity = new Vector2(rb.velocity.x,jumpSpeed);
