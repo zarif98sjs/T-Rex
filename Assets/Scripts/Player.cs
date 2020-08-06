@@ -13,6 +13,9 @@ public class Player : MonoBehaviour
     public int score = 0;
     public Text scoreText;
     public GameObject gameOver;
+    public GameObject jumpSound;
+    public GameObject deadSound;
+    public GameObject duckSound;
 
     /** Ground Check **/
     public Transform groundCheckPoint;
@@ -50,6 +53,7 @@ public class Player : MonoBehaviour
         if(dead)
         {
             gameOver.SetActive(true);
+            Instantiate(duckSound, transform.position , Quaternion.identity);
             Destroy(gameObject);
             time = 0f;
         }
@@ -66,6 +70,7 @@ public class Player : MonoBehaviour
         if(Input.GetButtonDown("Jump") && isGround)
         {
             rb.velocity = new Vector2(rb.velocity.x,jumpSpeed);
+            Instantiate(jumpSound, transform.position , Quaternion.identity);
             Debug.Log(rb.velocity);
             Debug.Log("Jumping");
         }
