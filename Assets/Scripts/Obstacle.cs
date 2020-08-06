@@ -26,11 +26,16 @@ public class Obstacle : MonoBehaviour
     /// <param name="other">The other Collider2D involved in this collision.</param>
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Collision");
-
         if(other.CompareTag("Player"))
         {
+            Debug.Log("COLLISION");
             other.GetComponent<Player>().dead = true;
+            Destroy(gameObject);
+        }
+
+        if(other.CompareTag("Des"))
+        {
+            Debug.Log("DESTROY");
             Destroy(gameObject);
         }
     }

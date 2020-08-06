@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
 
         scoreText.text = score.ToString();
 
-        Debug.Log(score);
+        // Debug.Log(score);
 
         if(dead)
         {
