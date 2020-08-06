@@ -18,9 +18,9 @@
 # Game Manual
 - ***Space*** to *Jump*
 - ***Down Arrow*** to *Duck* 
-# Download (For Windows , Mac & Linux)
+# Download & Play (For Windows , Mac & Linux)
 [**Link**](https://github.com/zarif98sjs/T-Rex/releases/tag/1.0)
-# Play
+# Play Online
 ***Hop in*** [***here***](https://zarif98sjs.github.io/games/T-Rex/) 
 
 <p align="Center">
