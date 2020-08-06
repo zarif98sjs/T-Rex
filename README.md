@@ -13,3 +13,17 @@
                                     ▀▀▀▀ ▀──▀ 　 ▀───▀ ▀──▀ ▀─▀▀ ▀▀▀
 ```
  
+# T-Rex On Mars(?!)
+***Recreating the old classic game T-Rex from scratch using Unity***
+
+<p align="Center">
+  
+![](https://github.com/zarif98sjs/T-Rex/blob/master/Gifs/gif.gif)
+
+</p>
+
+# Game Engine
+***Unity***
+
+# Programming Language
+***C#***
