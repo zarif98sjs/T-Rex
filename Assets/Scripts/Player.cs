@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class Player : MonoBehaviour
     public bool dead = false;
     public float time = 0f;
     public int score = 0;
+    public Text scoreText;
+    public GameObject gameOver;
 
     /** Ground Check **/
     public Transform groundCheckPoint;
@@ -40,11 +43,13 @@ public class Player : MonoBehaviour
         time += 10*Time.deltaTime ;
         score = (int)time;
 
+        scoreText.text = score.ToString();
+
         Debug.Log(score);
 
         if(dead)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            gameOver.SetActive(true);
             Destroy(gameObject);
             time = 0f;
         }
