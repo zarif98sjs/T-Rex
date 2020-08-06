@@ -30,7 +30,8 @@ public class Obstacle : MonoBehaviour
 
         if(other.CompareTag("Player"))
         {
-             Destroy(gameObject);
+            other.GetComponent<Player>().dead = true;
+            Destroy(gameObject);
         }
     }
 }

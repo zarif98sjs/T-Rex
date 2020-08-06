@@ -1,11 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
     public float speed = 5f;
     public float jumpSpeed = 5f;
+    public bool dead = false;
+    public float time = 0f;
+    public int score = 0;
 
     /** Ground Check **/
     public Transform groundCheckPoint;
@@ -32,7 +36,18 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // rb.velocity = new Vector2(speed,rb.velocity.y);
+       
+        time += 10*Time.deltaTime ;
+        score = (int)time;
+
+        Debug.Log(score);
+
+        if(dead)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            Destroy(gameObject);
+            time = 0f;
+        }
 
         Destroy(GetComponent<PolygonCollider2D>());
         gameObject.AddComponent<PolygonCollider2D>();
